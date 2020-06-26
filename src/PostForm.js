@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+
 
 class PostForm extends Component {
   handleSubmit = (e) => {
@@ -10,7 +12,11 @@ class PostForm extends Component {
       title,
       message
     }
-    console.log(data)
+    this.props.dispatch({
+      type:'ADD_POST',
+      data});
+    this.getTitle.value = '';
+    this.getMessage.value = '';
   }
 render() {
 return (
@@ -29,4 +35,4 @@ return (
 );
 }
 }
-export default PostForm;
+export default connect()(PostForm);
