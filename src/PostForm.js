@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-
-
 class PostForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
@@ -10,7 +8,8 @@ class PostForm extends Component {
     const data = {
       id: new Date(),
       title,
-      message
+      message,
+      editing:false
     }
     this.props.dispatch({
       type:'ADD_POST',
