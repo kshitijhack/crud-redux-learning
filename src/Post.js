@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 
 class Post extends Component {
@@ -6,6 +7,8 @@ class Post extends Component {
     <div>
       <h2>{this.props.post.title}</h2>
       <p>{this.props.post.message}</p>
+      <button>Edit</button>
+      <button>Delete</button>
     </div>
   );
  }
